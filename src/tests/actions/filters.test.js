@@ -2,8 +2,8 @@ import moment from "moment";
 import {
   setStartDate,
   setEndDate,
-  setByAmount,
-  setByDate,
+  sortByAmount,
+  sortByDate,
   setTextFilter,
 } from "../../actions/filters";
 
@@ -24,14 +24,14 @@ test("should generate set end date action object", () => {
 });
 
 test("should generate set by amount action object", () => {
-  const action = setByAmount();
+  const action = sortByAmount();
   expect(action).toEqual({
     type: "SET_BY_AMOUNT",
   });
 });
 
 test("should generate set by date action object", () => {
-  const action = setByDate();
+  const action = sortByDate();
   expect(action).toEqual({
     type: "SET_BY_DATE",
   });
