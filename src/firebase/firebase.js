@@ -34,12 +34,12 @@ export { firebase, database as default };
 //   console.log(expenses);
 // });
 
-database.ref("expenses").push({
-  description: "Date",
-  amount: 8000,
-  createdAt: 100,
-  note: "Date with she",
-});
+// database.ref("expenses").push({
+//   description: "Date",
+//   amount: 8000,
+//   createdAt: 100,
+//   note: "Date with she",
+// });
 
 // database.ref().on(
 //   "value",
