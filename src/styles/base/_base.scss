@@ -1,21 +1,31 @@
 html {
-    font-size: 62.5%;
-  }
-  
-  body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: $m-size;
-  }
-  
-  button {
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    cursor: default;
-  }
-  
-  .is-active {
-    color: cadetblue;
-    font-weight: bold;
-  }
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+}
+
+.button {
+  padding: $s-size $m-size;
+  background-color: $blue;
+  border: none;
+  color: oldlace;
+  font-weight: bold;
+  border-bottom: 3px solid #2b8a85;
+  transition: 0.3;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.is-active {
+  font-weight: bold;
+}
