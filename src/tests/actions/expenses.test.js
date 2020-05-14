@@ -13,6 +13,8 @@ import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import database from "../../firebase/firebase";
 
+const uid = "test";
+const defaultAuth = { auth: { uid } };
 const createMockStore = configureStore([thunk]);
 
 beforeEach((done) => {
@@ -21,7 +23,7 @@ beforeEach((done) => {
     expensesData[id] = { description, amount, createdAt, note };
   });
   database
-    .ref("expenses")
+    .ref(`users/${uid}/expenses`)
     .set(expensesData)
     .then(() => done());
 });
@@ -54,7 +56,7 @@ test("should setup add expense action object with provided values", () => {
 });
 
 test("should add expense to database and store", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuth);
   const expenseData = {
     description: "Keyboard",
     amount: 5000,
@@ -72,7 +74,9 @@ test("should add expense to database and store", (done) => {
           ...expenseData,
         },
       });
-      return database.ref(`expenses/${actions[0].expense.id}`).once("value");
+      return database
+        .ref(`users/${uid}/expenses/${actions[0].expense.id}`)
+        .once("value");
     })
     .then((snapshot) => {
       expect(snapshot.val()).toEqual(expenseData);
@@ -81,7 +85,7 @@ test("should add expense to database and store", (done) => {
 });
 
 test("should add expense with defaults to database and store", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuth);
   const defaultExpense = {
     description: "",
     note: "",
@@ -99,7 +103,9 @@ test("should add expense with defaults to database and store", (done) => {
           ...defaultExpense,
         },
       });
-      return database.ref(`expenses/${actions[0].expense.id}`).once("value");
+      return database
+        .ref(`users/${uid}/expenses/${actions[0].expense.id}`)
+        .once("value");
     })
     .then((snapshot) => {
       expect(snapshot.val()).toEqual(defaultExpense);
@@ -116,7 +122,7 @@ test("should setup set expense action object", () => {
 });
 
 test("should fetch expenses from database on start", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuth);
   store.dispatch(startSetExpenses(expenses)).then(() => {
     const actions = store.getActions();
     expect(actions[0]).toEqual({
@@ -128,7 +134,7 @@ test("should fetch expenses from database on start", (done) => {
 });
 
 test("should remove expense from firebase", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuth);
   store.dispatch(startRemoveExpense(expenses[1].id)).then(() => {
     const actions = store.getActions();
     expect(actions[0]).toEqual({
@@ -140,7 +146,7 @@ test("should remove expense from firebase", (done) => {
 });
 
 test("should edit expense from firebase", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuth);
   const id = expenses[1].id;
   const updates = { amount: 5611 };
   store.dispatch(startEditExpense(id, updates)).then(() => {
