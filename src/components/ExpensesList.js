@@ -5,13 +5,18 @@ import ExpensesListItem from "./ExpensesListItem";
 
 export const ExpensesList = (props) => {
   return (
-    <div>
+    <div className="content-container">
+      <div className="list-header">
+        <div className="visable-for-desktop">Expense</div>
+        <div className="visablse-for-desktop">Amount</div>
+        <div className="visable-for-mobile">Expenses</div>
+      </div>
       {props.expenses.length ? (
         props.expenses.map((expense) => {
           return <ExpensesListItem key={expense.id} {...expense} />;
         })
       ) : (
-        <p>No expenses</p>
+        <span className="list-item list-item--message">No expenses</span>
       )}
     </div>
   );

@@ -1,7 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseList with expenses 1`] = `
-<div>
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="visable-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="visablse-for-desktop"
+    >
+      Amount
+    </div>
+    <div
+      className="visable-for-mobile"
+    >
+      Expenses
+    </div>
+  </div>
   <ExpensesListItem
     amount={10}
     createdAt={0}
@@ -30,9 +51,32 @@ exports[`should render ExpenseList with expenses 1`] = `
 `;
 
 exports[`should render ExpenseList without expenses 1`] = `
-<div>
-  <p>
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="visable-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="visablse-for-desktop"
+    >
+      Amount
+    </div>
+    <div
+      className="visable-for-mobile"
+    >
+      Expenses
+    </div>
+  </div>
+  <span
+    className="list-item list-item--message"
+  >
     No expenses
-  </p>
+  </span>
 </div>
 `;

@@ -1,0 +1,18 @@
+.input-box {
+  display: flex;
+}
+
+@media (max-width: $desktop-breakpoint) {
+  .input-box {
+    flex-direction: column;
+  }
+}
+
+.input-box__item {
+  margin: $m-size $m-size $m-size 0;
+}
+@media (max-width: $desktop-breakpoint) {
+  .input-box__item {
+    margin: $s-size $s-size $s-size 0;
+  }
+}

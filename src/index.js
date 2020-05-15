@@ -5,9 +5,10 @@ import { Provider } from "react-redux";
 import { configureStore } from "./store/configureStore";
 import { startSetExpenses } from "./actions/expenses";
 import { login, logout } from "./actions/auth";
+import { firebase } from "./firebase/firebase";
+import LoadingPage from "./components/LoadingPage";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
-import { firebase } from "./firebase/firebase";
 
 const store = configureStore();
 
@@ -16,7 +17,7 @@ const jsx = (
     <AppRouter />
   </Provider>
 );
-ReactDOM.render(<h3>Loading...</h3>, document.getElementById("root"));
+ReactDOM.render(<LoadingPage />, document.getElementById("root"));
 
 let hasRendered = false;
 const renderApp = () => {

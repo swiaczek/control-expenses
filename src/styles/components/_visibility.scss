@@ -1,0 +1,11 @@
+.visable-for-mobile {
+  @media (min-width: $desktop-breakpoint) {
+    display: none;
+  }
+}
+
+.visable-for-desktop {
+  @media (max-width: $desktop-breakpoint) {
+    display: none;
+  }
+}
