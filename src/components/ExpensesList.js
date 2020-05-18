@@ -8,7 +8,7 @@ export const ExpensesList = (props) => {
     <div className="content-container">
       <div className="list-header">
         <div className="visable-for-desktop">Expense</div>
-        <div className="visablse-for-desktop">Amount</div>
+        <div className="visable-for-desktop">Amount</div>
         <div className="visable-for-mobile">Expenses</div>
       </div>
       {props.expenses.length ? (

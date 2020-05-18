@@ -10,7 +10,6 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
   color: $dark-blue;
-  margin-bottom: $l-size;
 }
 
 .button {
@@ -20,7 +19,6 @@ body {
   line-height: 25px;
   border: none;
   color: #fdf5e6;
-  max-width: 200px;
   font-weight: bold;
   border-bottom: 3px solid #2b8a85;
   transition: 0.3;
@@ -31,7 +29,7 @@ body {
   @extend .button;
   background-color: silver;
   border-bottom: 3px solid grey;
-  width: 120px;
+  width: 100%;
 }
 
 .button:hover {

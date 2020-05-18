@@ -9,13 +9,16 @@
 }
 
 .box-layout__box {
-  width: 25%;
+  width: 30%;
   text-align: center;
   background-color: fade-out($color: white, $amount: 0.1);
   color: rgb(82, 92, 102);
   border-radius: 5px;
   padding: $l-size $l-size;
   line-height: 1.3;
+  @media (max-width: $desktop-breakpoint) {
+    width: 80%;
+  }
 }
 
 .box-layout__box__title {
