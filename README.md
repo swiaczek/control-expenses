@@ -1,6 +1,6 @@
 # React Control Expenses
 
-This is a react Control Expenses app.
+This is a react Control Expenses Single Page Application.
 Demo version: https://control-expenses.herokuapp.com/
 
 ## Instructions
