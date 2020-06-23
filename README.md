@@ -1,6 +1,6 @@
-# React Control Expenses
+# React-Redux Control Expenses
 
-This is a react Control Expenses Single Page Application.
+This is a react-redux app (SPA).
 Demo version: https://control-expenses.herokuapp.com/
 
 ## Instructions
